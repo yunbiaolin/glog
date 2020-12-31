@@ -1,6 +1,5 @@
 package(default_visibility = ["//visibility:public"])
-load(':bazel/glog.bzl', 'glog_library')
-glog_library()
+
 
 cc_library(
   name = "glog",
@@ -9,7 +8,6 @@ cc_library(
      "//conditions:default": [":glogint"],
   })
 )
-
 cc_library(
   name = "glogwin",
   hdrs = [
@@ -62,6 +60,6 @@ cc_library(
     "HAVE_LIB_GFLAGS",
   ],
   deps = [
-    "@gflags//:gflags",
-  ],
+    "@com_github_gflags_gflags//:gflags",
+  ]
 )
